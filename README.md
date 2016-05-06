@@ -32,7 +32,7 @@ To install this gem onto your local machine, run `bundle exec rake install`.
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/B64.
+Bug reports and pull requests are welcome on GitHub at https://github.com/rangeroob/B64.
 
 
     1. Fork it

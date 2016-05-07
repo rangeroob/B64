@@ -1,4 +1,4 @@
 #! /usr/bin/env_ruby
 # B64
 require 'B64'
-B64.new
+

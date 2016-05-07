@@ -1,8 +1,8 @@
 # B64
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/B64`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Is a little commandline application for note taking purposes that 
+encodes a string into Base64 and saves to a file named after a time 
+(ex: 2099-09-06_15-45-50) 
 
 ## Installation
 
@@ -22,8 +22,12 @@ Or install it yourself as:
 
 ## Usage
 
-
-
+    Options:
+     -w, --write=<s>    write file
+     -r, --read=<s>     read file
+     -h, --help         Show this message
+      B64 -w 'hello world'
+      B64
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.

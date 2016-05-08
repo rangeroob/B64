@@ -22,16 +22,19 @@ Or install it yourself as:
 
 ## Usage
 Type :
+    
     B64 -w 'anything' 
 
 To write to a file 
 
 Type :
+    
     B64 -r path/to/file
 
 To decode the file 
 
 Type :
+    
     B64 -h
 
 To display this message

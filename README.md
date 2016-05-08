@@ -25,15 +25,16 @@ Type :
     B64 -w 'anything' 
 
 To write to a file 
+
 Type :
-    B64 -r <path to file>
+    B64 -r path/to/file
 
 To decode the file 
+
 Type :
     B64 -h
 
 To display this message  
-
     Options:
      -w, --write=<s>    write file
      -r, --read=<s>     read file

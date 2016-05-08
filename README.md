@@ -21,11 +21,17 @@ Or install it yourself as:
     $ gem install B64
 
 ## Usage
-Type :    B64 -w 'anything' 
+Type :
+    B64 -w 'anything' 
+
 To write to a file 
-Type :    B64 -r <path to file>
+Type :
+    B64 -r <path to file>
+
 To decode the file 
-Type :    B64 -h
+Type :
+    B64 -h
+
 To display this message  
 
     Options:

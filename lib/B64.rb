@@ -1,8 +1,8 @@
 #! /usr/bin/env_ruby
 require 'base64'
 require 'date'
-require File.join(File.dirname(__FILE__), 'B64/trollop')
-require File.join(File.dirname(__FILE__), 'B64/version')
+require File.join(File.dirname(__FILE__), 'B64/trollop.rb')
+require File.join(File.dirname(__FILE__), 'B64/version.rb')
 # Base64 encoder/decoder to/from file
 class B64File
   def initialize

@@ -34,6 +34,12 @@ Type :
 To decode the file 
 
 Type :
+
+    B64 -d path/to/file
+    
+To delete the file
+
+Type :
     
     B64 -h
 

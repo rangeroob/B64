@@ -20,6 +20,10 @@ class TestB64 < Minitest::Test
     assert_includes @b64.start, :read
   end
 
+  def test_start_includes_delete?
+    assert_includes @b64.start, :delete
+  end
+
   def test_opts_not_nil?
     refute_nil @b64.opts
   end
@@ -31,6 +35,7 @@ class TestB64 < Minitest::Test
   def test_encode_writes_to_file?
     write = @b64.encode('hello')
     assert_equal write, @time
+    #clean up file
     File.delete(Time.now.strftime('%Y-%m-%d_%H-%M-%S'))
   end
 
@@ -42,5 +47,11 @@ class TestB64 < Minitest::Test
     read = ['aSB3YW50IGEgY3JhY2tlciE=']
     testfile = File.join(File.dirname(__FILE__), '../test/file/test.txt')
     assert_equal read, @b64.decode(testfile)
+  end
+  
+  def test_delete_is_vaild?
+    File.new "delete","w"
+    delete = @b64.delete("delete")
+    assert true, delete
   end
 end

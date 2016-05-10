@@ -48,6 +48,7 @@ To display this message
     Options:
      -w, --write=<s>    write file
      -r, --read=<s>     read file
+     -d, --delete=<s>   delete file
      -h, --help         Show this message
      
 ## Development

@@ -18,6 +18,7 @@ class B64File
     @opts = Trollop.options do
       opt :write, 'write file', type: :string
       opt :read, 'read file', type: :string
+      opt :delete, 'delete file', type: :string
     end
   end
 
@@ -26,8 +27,10 @@ class B64File
       encode
     elsif @opts[:read]
       decode
+    elsif @opts[:delete]
+      delete
     else
-     :die
+      :die
     end
   end
 
@@ -37,6 +40,10 @@ class B64File
       open(time.to_s, 'w') { |w| w.write(@encode.to_s) }
       return File.delete(time) if File.zero?(time)
     end
+  end
+
+  def delete(file = @opts[:delete])
+    File.delete(file)
   end
 
   def decode(file = @opts[:read])

@@ -1,6 +1,8 @@
 #! /usr/bin/env_ruby
 require 'minitest/autorun'
 require File.join(File.dirname(__FILE__), '../lib/B64')
+require 'coveralls'
+Coveralls.wear!
 # minitest test
 class TestB64 < Minitest::Test
   def setup

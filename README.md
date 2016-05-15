@@ -1,4 +1,5 @@
 # B64
+[![Coverage Status](https://coveralls.io/repos/github/rangeroob/B64/badge.svg?branch=master)](https://coveralls.io/github/rangeroob/B64?branch=master)
 
 Is a little commandline application for note taking purposes that 
 encodes a string into Base64 and saves to a file named after a time 

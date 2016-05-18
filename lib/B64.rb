@@ -29,7 +29,7 @@ class B64File
           opt :add, "Add to File", type: :string
   end
           
-puts "Global options: #{global_opts.inspect}"
+puts "Global options: #{@opts.inspect}"
 puts "Subcommand: #{cmd.inspect}"
 puts "Subcommand options: #{cmd_opts.inspect}"
 puts "Remaining arguments: #{ARGV.inspect}"

@@ -15,11 +15,24 @@ class B64File
   end
 
   def start
+    sub_commands = %w(file)
     @opts = Trollop.options do
       opt :write, 'write file', type: :string
       opt :read, 'read file', type: :string
       opt :delete, 'delete file', type: :string
+      stop_on sub_commands
     end
+    cmd = ARGV.shift
+    cmd_opts = case cmd
+      when "file"
+        Trollop::options do
+          opt :add, "Add to File", type: :string
+  end
+          
+puts "Global options: #{global_opts.inspect}"
+puts "Subcommand: #{cmd.inspect}"
+puts "Subcommand options: #{cmd_opts.inspect}"
+puts "Remaining arguments: #{ARGV.inspect}"
   end
 
   def opts
@@ -51,6 +64,7 @@ class B64File
       @decode = Base64.urlsafe_decode64(line)
       puts @decode
     end
+  end
   end
 end
 B64File.new

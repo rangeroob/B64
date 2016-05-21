@@ -41,9 +41,10 @@ Type :
 To display this message
 
     Options:
-     -w, --write=<s>    write file
+     -w, --write=<s>    write to file
      -r, --read=<s>     read file
      -d, --delete=<s>   delete file
+     -a, --add=<s>      add to file
      -h, --help         Show this message
      
 ## Development

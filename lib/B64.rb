@@ -15,24 +15,12 @@ class B64File
   end
 
   def start
-    sub_commands = %w(file)
     @opts = Trollop.options do
       opt :write, 'write file', type: :string
       opt :read, 'read file', type: :string
       opt :delete, 'delete file', type: :string
-      stop_on sub_commands
+      opt :open, 'open file', type: :string
     end
-    cmd = ARGV.shift
-    cmd_opts = case cmd
-      when "file"
-        Trollop::options do
-          opt :add, "Add to File", type: :string
-  end
-          
-puts "Global options: #{@opts.inspect}"
-puts "Subcommand: #{cmd.inspect}"
-puts "Subcommand options: #{cmd_opts.inspect}"
-puts "Remaining arguments: #{ARGV.inspect}"
   end
 
   def opts
@@ -42,15 +30,24 @@ puts "Remaining arguments: #{ARGV.inspect}"
       decode
     elsif @opts[:delete]
       delete
+    elsif @opts[:open]
+      add
     else
       :die
     end
   end
-
+  
+  def add(file = @opts[:open])
+    print ">"
+    addition = gets.chomp
+    @encode = Base64.urlsafe_encode64(addition)
+    open(file, 'a+') { |a| a.puts "\n" + @encode.to_s }
+  end
+  
   def encode(file = @opts[:write])
     unless File.zero?(time)
       @encode = Base64.urlsafe_encode64(file.to_s)
-      open(time.to_s, 'w') { |w| w.write(@encode.to_s) }
+      open(time.to_s, 'w+') { |w| w.write(@encode.to_s) }
       return File.delete(time) if File.zero?(time)
     end
   end
@@ -61,10 +58,9 @@ puts "Remaining arguments: #{ARGV.inspect}"
 
   def decode(file = @opts[:read])
     open(file).readlines.each do |line|
-      @decode = Base64.urlsafe_decode64(line)
+      @decode = Base64.decode64(line)
       puts @decode
     end
-  end
   end
 end
 B64File.new

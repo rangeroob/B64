@@ -28,6 +28,12 @@ Type :
 To delete the file
 
 Type :
+    B64 -a path/to/file
+    > 'anything'
+    
+To add to a file
+
+Type :
     
     B64 -h
 

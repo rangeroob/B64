@@ -16,10 +16,10 @@ class B64File
 
   def start
     @opts = Trollop.options do
-      opt :write, 'write file', type: :string
+      opt :write, 'write to file', type: :string
       opt :read, 'read file', type: :string
       opt :delete, 'delete file', type: :string
-      opt :open, 'open file', type: :string
+      opt :add, 'add to file', type: :string
     end
   end
 
@@ -30,14 +30,14 @@ class B64File
       decode
     elsif @opts[:delete]
       delete
-    elsif @opts[:open]
+    elsif @opts[:add]
       add
     else
       :die
     end
   end
   
-  def add(file = @opts[:open])
+  def add(file = @opts[:add])
     print ">"
     addition = gets.chomp
     @encode = Base64.urlsafe_encode64(addition)

@@ -12,6 +12,10 @@ class TestB64 < Minitest::Test
     assert_equal @time, @b64.time
   end
 
+  def test_start_includes_add?
+    assert_includes @b64.start, :add
+  end
+
   def test_start_includes_write?
     assert_includes @b64.start, :write
   end
@@ -25,17 +29,24 @@ class TestB64 < Minitest::Test
   end
 
   def test_opts_not_nil?
-    refute_nil @b64.opts
+    assert_nil @b64.opts
   end
 
   def test_encode_is_vaild?
     assert true, @b64.encode
   end
 
+  def test_add_add_to_file?
+    add = @b64.add('./file/testadd.txt')
+    assert_equal add, @time
+    # clean up file
+    File.delete('./file/testadd.txt')
+  end
+
   def test_encode_writes_to_file?
     write = @b64.encode('hello')
     assert_equal write, @time
-    #clean up file
+    # clean up file
     File.delete(Time.now.strftime('%Y-%m-%d_%H-%M-%S'))
   end
 
@@ -48,10 +59,10 @@ class TestB64 < Minitest::Test
     testfile = File.join(File.dirname(__FILE__), '../test/file/test.txt')
     assert_equal read, @b64.decode(testfile)
   end
-  
+
   def test_delete_is_vaild?
-    File.new "delete","w"
-    delete = @b64.delete("delete")
+    File.new 'delete', 'w'
+    delete = @b64.delete('delete')
     assert true, delete
   end
 end

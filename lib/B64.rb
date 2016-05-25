@@ -32,18 +32,16 @@ class B64File
       delete
     elsif @opts[:add]
       add
-    else
-      :die
     end
   end
-  
+
   def add(file = @opts[:add])
-    print ">"
+    print '>'
     addition = gets.chomp
     @encode = Base64.urlsafe_encode64(addition)
     open(file, 'a+') { |a| a.puts "\n" + @encode.to_s }
   end
-  
+
   def encode(file = @opts[:write])
     unless File.zero?(time)
       @encode = Base64.urlsafe_encode64(file.to_s)

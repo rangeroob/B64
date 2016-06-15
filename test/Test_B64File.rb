@@ -28,7 +28,7 @@ class TestB64 < Minitest::Test
     assert_includes @b64.start, :delete
   end
 
-  def test_opts_not_nil?
+  def test_opts_nil?
     assert_nil @b64.opts
   end
 

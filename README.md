@@ -9,7 +9,7 @@ encodes a string into Base64 and saves to a file named after a time
 
     gem install B64
 
-To install this gem onto locally run `bundle exec rake install`.
+To install this gem on local host run `bundle exec rake install`.
 
 ## Usage
 

@@ -1,3 +1,4 @@
+[![Gem Version](https://badge.fury.io/rb/B64.svg)](https://badge.fury.io/rb/B64)
 # B64
 
 Is a little commandline application for note taking purposes that 

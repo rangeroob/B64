@@ -11,7 +11,9 @@ install it yourself as:
 
     gem install B64
 
-Or install this gem locally with: `bundle exec rake install`.
+Or install this gem locally with: 
+
+    `bundle exec rake install`
 
 ## Usage
 

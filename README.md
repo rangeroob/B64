@@ -7,9 +7,12 @@ encodes a string into Base64 and saves to a file named after a time
 
 ## Installation
 
-To install this gem onto your local machine, run `bundle exec rake install`.
+    gem install B64
+
+To install this gem onto your locally run `bundle exec rake install`.
 
 ## Usage
+
 Type :
     
     B64 -w 'anything' 

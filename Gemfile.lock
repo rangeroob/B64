@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    B64 (0.1.0)
+    B64 (0.1.0.2)
 
 GEM
   remote: https://rubygems.org/
@@ -19,4 +19,4 @@ DEPENDENCIES
   rake (~> 10.0)
 
 BUNDLED WITH
-   1.12.1
+   1.12.5

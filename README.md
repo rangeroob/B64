@@ -13,7 +13,7 @@ install it yourself as:
 
 Or install this gem locally with: 
 
-    `bundle exec rake install`
+    bundle exec rake install
 
 ## Usage
 
